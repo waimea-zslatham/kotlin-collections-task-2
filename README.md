@@ -1,11 +1,17 @@
-# Kotlin Collections Task 2 - 
+# Kotlin Collections Task 2 - Monkeys in Cages
 
 ```
-     __v__
-    ( o o )   __v__
-     (---)   ( o o )
-              (---)
- 
+      OOOOO  OOO   OOO
+         O  O   O O   O
+        O   O   O O   O
+      OOOOO  OOO   OOO
++-------------+-------------+
+|    __v__    |             |
+|   ( o o )   |    __v__    |
+|    (---)    |   ( o o )   |
+|    __|__    |    (---)    |
+|   /|. .|\   |      |      |
++-------------+-------------+
 ```
 
-Oh, no! There are monkeys loose in your house. You had better collect all their names so that you can report them to the authorities!
+The monkeys have been rounded up and transported to the Zoo. The zookeepers need some help placing the monkeys into cages. Can you help them?
