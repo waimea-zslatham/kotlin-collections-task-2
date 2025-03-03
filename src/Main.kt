@@ -62,6 +62,9 @@ fun main() {
     println("Empty: ${emptyCount(cages)}")
     println()
 
+    listAllMonkeysAndCages(cages)
+    println()
+
     showMonkeyCages(cages)
     println()
 
@@ -175,10 +178,10 @@ fun listEmptyCages(cageList: List<String>) {
  * Display a full list of all monkeys and the cages they are in.
  * The names and cage numbers should line up in neat columns:
  *
- * MONKEYS
- * - Kevin   (Cage 1)
- * - Samson  (Cage 3)
- * - Pam     (Cage 4)
+ * MONKEYS & CAGES
+ * - Kevin  (Cage 1)
+ * - Samson (Cage 3)
+ * - Pam    (Cage 4)
  * - Etc.
  *
  * Tip: the String.padEnd(N) function will help you here
