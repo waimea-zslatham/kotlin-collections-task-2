@@ -155,9 +155,11 @@ fun listAllCages(cageList: List<String>) {
  * - Etc.
  */
 fun listAllMonkeys(cageList: List<String>) {
-    println("MONKEYS")
-
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    println("Monkey List")
+    println("-------------------")
+    for ((i, name) in monkeyCount(cageList).) {
+        println("Monkey ${i + 1}: $name")
+    }
 }
 
 
