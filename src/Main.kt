@@ -113,7 +113,7 @@ fun setupCages(): MutableList<String> {
     val cageList = mutableListOf<String>()
     for (i in 1..NUMCAGES) cageList.add(EMPTY)
     return cageList
-}
+    }
 
 
 /**
@@ -121,10 +121,9 @@ fun setupCages(): MutableList<String> {
  */
 fun placeMonkeyInCage(cageList: MutableList<String>, cageNum: Int, name: String) {
     println("Putting $name into cage $cageNum")
-    println("Add monkey to cage: ")
-    val userInput = readln()
-        cageList.add(0, userInput)
-        }
+    cageList[cageNum-1] = name
+
+    }
 
 
 /**
@@ -142,6 +141,7 @@ fun listAllCages(cageList: List<String>) {
     for ((i, name) in cageList.withIndex()) {
         println("Cage ${i + 1}: $name")
     }
+
 }
 
 
@@ -156,9 +156,8 @@ fun listAllCages(cageList: List<String>) {
  */
 fun listAllMonkeys(cageList: List<String>) {
     println("Monkey List")
-    println("-------------------")
-    for ((i, name) in monkeyCount(cageList).) {
-        println("Monkey ${i + 1}: $name")
+    for ((i, name) in cageList.withIndex()) {
+        println("Monkey $name")
     }
 }
 
@@ -174,7 +173,11 @@ fun listAllMonkeys(cageList: List<String>) {
 fun listEmptyCages(cageList: List<String>) {
     println("EMPTY CAGES")
 
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    for (i in 0..< cageList.size) {
+        if (cageList[i] == EMPTY) {
+            println("- Cage ${i + 1}")
+        }
+    }
 }
 
 
@@ -192,17 +195,25 @@ fun listEmptyCages(cageList: List<String>) {
  */
 fun listAllMonkeysAndCages(cageList: List<String>) {
     println("MONKEYS & CAGES")
-
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    for (i in 0..< cageList.size - 1) {
+        if (cageList[i] != EMPTY) {
+            println("- ${cageList[i].padEnd(7)} cage ${i + 1}")
+        }
+    }
 }
+
 
 
 /**
  * Returns the number of monkeys found in the given cage list
  */
 fun monkeyCount(cageList: List<String>): Int {
-
-    return 0    // REPLACE THIS WITH YOUR CODE!
+    var count = 0
+    for (i in 0..< cageList.size) {
+        if (cageList[i] != EMPTY) count++
+    }
+    print(count)
+    return count
 }
 
 
@@ -210,8 +221,11 @@ fun monkeyCount(cageList: List<String>): Int {
  * Returns the number of cages that are empty in the given cage list
  */
 fun emptyCount(cageList: List<String>): Int {
-
-    return 0    // REPLACE THIS WITH YOUR CODE!
+    var count = 0
+    for (i in 0..cageList.size - 1) {
+        if (cageList[i] == EMPTY) count++
+    }
+    return count
 }
 
 
@@ -227,32 +241,43 @@ fun emptyCount(cageList: List<String>): Int {
  * Tip: the String.padEnd(N) function will help you here
  */
 fun showMonkeyCages(cageList: List<String>) {
+    println("+--------".repeat(cageList.size))
+    for (i in 0..cageList.size - 1) {
+        print("| Cage ${i + 1}".padEnd(9))
+    }
+    println("|")
+    println("+--------".repeat(cageList.size))
+    for (i in 0..cageList.size - 1) {
+        print("| ${cageList[i]}".padEnd(9))
+    }
+    println("|")
+    println("+--------".repeat(cageList.size))
 
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    /**
+     * Make a given cage empty (if a monkey was in it, it's gone now!)
+     */
+
+
+
+    /**
+     * Swap the contents of two given cages.
+     *
+     * If one was full and the other empty, then the monkey just swaps
+     * into the empty cage.
+     */
+
 }
 
-
-/**
- * Make a given cage empty (if a monkey was in it, it's gone now!)
- */
 fun clearCage(cageList: MutableList<String>, cageNum: Int) {
     println("--- Clearing cage $cageNum")
-
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    cageList[cageNum-1] = EMPTY
 }
 
-
-/**
- * Swap the contents of two given cages.
- *
- * If one was full and the other empty, then the monkey just swaps
- * into the empty cage.
- */
 fun swapCages(cageList: MutableList<String>, cageNum1: Int, cageNum2: Int) {
     println("<-> Swapping cages $cageNum1 and $cageNum2")
-
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    val swap = cageList[cageNum1]
+    cageList[cageNum1-1] = cageList[cageNum2-1]
+    cageList[cageNum2-1] = swap
 }
-
 
 
